@@ -1,0 +1,32 @@
+# Dependencies
+backend/venv/
+frontend/node_modules/
+tools/node-env/
+
+# Environments & Private credentials
+.env
+.env*.local
+backend/.env
+frontend/.env
+*.key
+
+# Database backups & local mock DBs
+mock_db.json
+*.db
+*.sqlite
+
+# Production Next.js build directories
+frontend/.next/
+frontend/out/
+frontend/build/
+
+# Python compile cache files
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+
+# System Files
+.DS_Store
+Thumbs.db
+.gemini/
