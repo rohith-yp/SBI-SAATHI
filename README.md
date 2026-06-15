@@ -229,9 +229,190 @@ Digital Engagement
 
 ---
 
+# Setup & Run Guide
+
+Follow these steps to run the complete SBI Saathi application on your local system.
+
+## Prerequisites
+
+Ensure the following are installed globally:
+
+* Python 3.10+
+* Node.js 18+
+* npm
+* Git
+* MongoDB (Local or Cloud Instance)
+
+---
+
+## 1. Clone the Repository
+
+```bash
+git clone <repository-url>
+cd SBI-Saathi
+```
+
+---
+
+## 2. Configure Environment Variables
+
+Create a `.env` file in the project root directory and add:
+
+```env
+GROQ_API_KEY=your_groq_api_key_here
+JWT_SECRET=supersecretkeyforsbisaathihackathon2026
+```
+
+---
+
+## 3. Setup the Python Backend
+
+Open a terminal in the root directory.
+
+### Windows
+
+```bash
+# Create virtual environment
+python -m venv backend/venv
+
+# Activate virtual environment
+call backend/venv/Scripts/activate
+
+# Install dependencies
+pip install -r backend/requirements.txt
+
+# Start FastAPI server
+uvicorn backend.app.main:app --host 127.0.0.1 --port 8000 --reload
+```
+
+### macOS / Linux
+
+```bash
+# Create virtual environment
+python3 -m venv backend/venv
+
+# Activate virtual environment
+source backend/venv/bin/activate
+
+# Install dependencies
+pip install -r backend/requirements.txt
+
+# Start FastAPI server
+uvicorn backend.app.main:app --host 127.0.0.1 --port 8000 --reload
+```
+
+Backend will be available at:
+
+```text
+http://localhost:8000
+```
+
+FastAPI Docs:
+
+```text
+http://localhost:8000/docs
+```
+
+---
+
+## 4. Setup the Next.js Frontend
+
+Open a second terminal in the project root.
+
+```bash
+cd frontend
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+Frontend will be available at:
+
+```text
+http://localhost:3000
+```
+
+---
+
+## 5. View the Application
+
+Open your browser and navigate to:
+
+```text
+http://localhost:3000
+```
+
+---
+
+## Project Structure
+
+```text
+SBI-Saathi/
+│
+├── frontend/
+│   ├── app/
+│   ├── components/
+│   ├── lib/
+│   └── public/
+│
+├── backend/
+│   ├── app/
+│   │   ├── agents/
+│   │   ├── api/
+│   │   ├── models/
+│   │   ├── services/
+│   │   └── main.py
+│   │
+│   ├── requirements.txt
+│   └── venv/
+│
+├── .env
+├── README.md
+└── package.json
+```
+
+---
+
+## AI Configuration
+
+This project uses:
+
+* GROQ API (Exclusive AI Provider)
+* LangChain
+* CrewAI
+
+All AI-powered functionality including:
+
+* Financial Health Analysis
+* Spending Analysis
+* Goal Planning
+* Risk Detection
+* Product Recommendations
+* AI Financial Assistant
+
+is powered entirely through the GROQ API.
+
+---
+
+## Demo Workflow
+
+1. Login to SBI Saathi
+2. View Financial Dashboard
+3. Analyze Spending Patterns
+4. Generate Financial Health Score
+5. Receive Risk Alerts
+6. Create Savings Goals
+7. Get Personalized Recommendations
+8. Chat with SBI Saathi AI Assistant
+
+---
+
 ## Developed By
 
-**Rohith YP**
+Rohith YP
 2nd Year AIML Engineering Student
 Vivekananda Institute of Technology, Bangalore
 
@@ -239,4 +420,4 @@ Vivekananda Institute of Technology, Bangalore
 
 ## Vision
 
-**"Banks today tell customers what happened to their money. SBI Saathi tells customers what will happen next and how they can make better financial decisions."**
+"Banks today tell customers what happened to their money. SBI Saathi tells customers what will happen next and how they can make better financial decisions."
